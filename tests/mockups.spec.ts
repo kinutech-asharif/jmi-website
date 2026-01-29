@@ -87,6 +87,44 @@ test.describe('Product Detail Mockup', () => {
 
     expect(errors).toHaveLength(0);
   });
+
+  test('should display logo in header', async ({ page }) => {
+    const logo = page.locator('.logo');
+    await expect(logo).toBeVisible();
+    // Verify it's not a broken image (has natural dimensions)
+    const naturalWidth = await logo.evaluate(
+      (img: HTMLImageElement) => img.naturalWidth
+    );
+    expect(naturalWidth).toBeGreaterThan(0);
+  });
+
+  test('should display product gallery images', async ({ page }) => {
+    const mainImage = page.locator('.main-image');
+    await expect(mainImage).toBeVisible();
+    // Verify main image loads correctly
+    const naturalWidth = await mainImage.evaluate(
+      (img: HTMLImageElement) => img.naturalWidth
+    );
+    expect(naturalWidth).toBeGreaterThan(0);
+
+    // Verify thumbnails are visible
+    const thumbnails = page.locator('.thumbnail img');
+    const thumbnailCount = await thumbnails.count();
+    expect(thumbnailCount).toBe(4);
+  });
+
+  test('should display footer', async ({ page }) => {
+    const footer = page.locator('footer.footer');
+    await expect(footer).toBeVisible();
+
+    // Verify footer has expected sections
+    const footerBrand = page.locator('.footer-brand');
+    await expect(footerBrand).toBeVisible();
+
+    const footerLinks = page.locator('.footer-links');
+    const linkCount = await footerLinks.count();
+    expect(linkCount).toBeGreaterThanOrEqual(3);
+  });
 });
 
 test.describe('Cross-page Navigation', () => {
