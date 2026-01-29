@@ -13,13 +13,116 @@ This project contains a complete UI/UX design system and page templates for **Ja
 ## 📁 Project Structure
 
 ```
-jmi-ecommerce-design/
-├── CLAUDE.md (this file)
-├── jmi-homepage.html
-├── jmi-product-detail.html
-└── assets/
-    ├── JMI_logo_2026.png
-    └── reference-images/
+jmi-website/
+├── CLAUDE.md                     # This file - design system documentation
+├── index.html                    # Root redirect to mockups/home.html
+├── package.json                  # NPM scripts and dependencies
+├── playwright.config.ts          # Playwright test configuration
+├── mockups/
+│   ├── home.html                 # Homepage mockup
+│   ├── product-detail.html       # Product detail page mockup
+│   ├── css/                      # (reserved for extracted styles)
+│   └── images/
+│       └── JMI logo 2026.png
+└── tests/
+    ├── mockups.spec.ts           # Functional validation tests
+    ├── visual.spec.ts            # Visual regression tests
+    └── accessibility.spec.ts     # Accessibility checks
+```
+
+---
+
+## 🌐 Live Preview (GitHub Pages)
+
+**Live Site:** https://kinutech-asharif.github.io/jmi-website/
+
+| Page | URL |
+|------|-----|
+| Homepage | https://kinutech-asharif.github.io/jmi-website/mockups/home.html |
+| Product Detail | https://kinutech-asharif.github.io/jmi-website/mockups/product-detail.html |
+
+**Repository:** https://github.com/kinutech-asharif/jmi-website
+
+---
+
+## 💻 Development Setup
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Install Playwright browsers (first time only)
+npx playwright install
+
+# Install system dependencies for Playwright (Linux/WSL)
+sudo npx playwright install-deps
+```
+
+### Local Server
+
+```bash
+# Start local server at http://localhost:3000
+npm run serve
+
+# Serve mockups directory directly
+npm run serve:mockups
+```
+
+### Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run serve` | Start local server on port 3000 |
+| `npm run serve:mockups` | Serve mockups directory on port 3000 |
+| `npm test` | Run Playwright tests |
+| `npm run test:headed` | Run tests with visible browser |
+| `npm run test:ui` | Run tests in interactive UI mode |
+| `npm run test:report` | View HTML test report |
+
+---
+
+## 🧪 Testing with Playwright
+
+### Test Suites
+
+1. **Functional Tests** (`tests/mockups.spec.ts`)
+   - Page load verification
+   - Element visibility checks
+   - Console error detection
+   - Responsive viewport tests
+
+2. **Visual Regression** (`tests/visual.spec.ts`)
+   - Full page screenshots
+   - Above-the-fold captures
+   - Mobile viewport comparisons
+
+3. **Accessibility** (`tests/accessibility.spec.ts`)
+   - Image alt text validation
+   - Keyboard navigation
+   - Form label associations
+   - Heading hierarchy
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run specific test file
+npx playwright test tests/mockups.spec.ts
+
+# Run on specific browser
+npx playwright test --project=chromium
+
+# Update visual baselines
+npx playwright test --update-snapshots
 ```
 
 ---
@@ -117,7 +220,7 @@ Trust badges, warranty badges, stock status - all use rounded rectangles with ic
 
 ## 📄 Page Templates
 
-### 1. Homepage (`jmi-homepage.html`)
+### 1. Homepage (`mockups/home.html`)
 
 **Sections (top to bottom):**
 
@@ -162,7 +265,7 @@ Trust badges, warranty badges, stock status - all use rounded rectangles with ic
    - 4-column grid: Brand info, Shop links, Support links, Legal links
    - Bottom bar: Copyright + payment badges
 
-### 2. Product Detail Page (`jmi-product-detail.html`)
+### 2. Product Detail Page (`mockups/product-detail.html`)
 
 **Layout:** Two-column grid (desktop)
 
@@ -450,6 +553,12 @@ For questions about this design system or implementation:
 
 ## 🔄 Version History
 
+**v1.1** - January 2026
+- GitHub Pages deployment
+- Playwright test suite (functional, visual, accessibility)
+- Local development server setup
+- Updated project structure
+
 **v1.0** - January 2026
 - Initial design system
 - Homepage template
@@ -460,9 +569,16 @@ For questions about this design system or implementation:
 
 ## 📚 Reference Links
 
+**Project:**
+- GitHub Repository: https://github.com/kinutech-asharif/jmi-website
+- Live Preview: https://kinutech-asharif.github.io/jmi-website/
+
 **Google Fonts:**
 - Saira Condensed: https://fonts.google.com/specimen/Saira+Condensed
 - Rajdhani: https://fonts.google.com/specimen/Rajdhani
+
+**Testing:**
+- Playwright Documentation: https://playwright.dev/docs/intro
 
 **WooCommerce:**
 - Storefront Theme: https://woocommerce.com/storefront/
