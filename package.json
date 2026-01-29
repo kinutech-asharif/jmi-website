@@ -1,0 +1,20 @@
+{
+  "name": "jmi-website",
+  "version": "1.0.0",
+  "description": "JMI eCommerce Design Mockups",
+  "private": true,
+  "scripts": {
+    "serve": "npx serve . -l 3000",
+    "serve:mockups": "npx serve mockups -l 3000",
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "serve": "^14.2.0"
+  },
+  "author": "A. Sharif <a.sharif@kinutech.com>",
+  "license": "UNLICENSED"
+}
