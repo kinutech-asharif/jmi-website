@@ -34,12 +34,12 @@ jmi-website/
 
 ## 🌐 Live Preview (GitHub Pages)
 
-**Live Site:** https://kinutech-asharif.github.io/jmi-website/
+**Live Site:** https://jmi.kinucloud.dev/
 
 | Page | URL |
 |------|-----|
-| Homepage | https://kinutech-asharif.github.io/jmi-website/mockups/home.html |
-| Product Detail | https://kinutech-asharif.github.io/jmi-website/mockups/product-detail.html |
+| Homepage | https://jmi.kinucloud.dev/mockups/home.html |
+| Product Detail | https://jmi.kinucloud.dev/mockups/product-detail.html |
 
 **Repository:** https://github.com/kinutech-asharif/jmi-website
 
@@ -571,7 +571,7 @@ For questions about this design system or implementation:
 
 **Project:**
 - GitHub Repository: https://github.com/kinutech-asharif/jmi-website
-- Live Preview: https://kinutech-asharif.github.io/jmi-website/
+- Live Preview: https://jmi.kinucloud.dev/
 
 **Google Fonts:**
 - Saira Condensed: https://fonts.google.com/specimen/Saira+Condensed
