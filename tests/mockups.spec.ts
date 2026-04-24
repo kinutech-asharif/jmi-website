@@ -149,11 +149,11 @@ test.describe('eBay Product Mockup', () => {
     expect(text.trim().length).toBeLessThanOrEqual(800);
   });
 
-  test('should render header, nav, banner, title, copyright', async ({ page }) => {
+  test('should render header, nav, hero, title, copyright', async ({ page }) => {
     await expect(page.locator('.ttj-header')).toBeVisible();
     await expect(page.locator('.ttj-nav')).toBeVisible();
-    await expect(page.locator('.ttj-banner')).toBeVisible();
-    await expect(page.locator('.ttj-title')).toBeVisible();
+    await expect(page.locator('.ttj-hero')).toBeVisible();
+    await expect(page.locator('.ttj-hero-title')).toBeVisible();
     await expect(page.locator('.ttj-copyright')).toBeVisible();
   });
 

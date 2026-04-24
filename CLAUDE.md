@@ -38,7 +38,8 @@ jmi-ebay/
 ├── mockups/
 │   ├── home.html                 # WooCommerce — homepage mockup
 │   ├── product-detail.html       # WooCommerce — product detail mockup
-│   ├── ebay-product.html         # eBay — TTJ-branded listing description template
+│   ├── ebay-product-v1.html      # eBay — TTJ listing template, v1 (original, kept for client comparison)
+│   ├── ebay-product.html         # eBay — TTJ listing template, v2 (current, designer-critiqued rebuild)
 │   ├── css/                      # (reserved for extracted styles)
 │   └── images/
 │       ├── JMI logo 2026.png     # Parent-brand logo
@@ -67,7 +68,8 @@ jmi-ebay/
 | Landing | https://jmi.kinucloud.dev/ |
 | Homepage (WooCommerce) | https://jmi.kinucloud.dev/mockups/home.html |
 | Product Detail (WooCommerce) | https://jmi.kinucloud.dev/mockups/product-detail.html |
-| eBay Listing (Top Tier Japan) | https://jmi.kinucloud.dev/mockups/ebay-product.html |
+| eBay Listing &mdash; v1 (original) | https://jmi.kinucloud.dev/mockups/ebay-product-v1.html |
+| eBay Listing &mdash; v2 (refined) | https://jmi.kinucloud.dev/mockups/ebay-product.html |
 
 **Repository:** https://github.com/kinutech-asharif/jmi-website
 

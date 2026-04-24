@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOP TIER JAPAN — JDM Engines & Performance Parts</title>
+<!-- Google Fonts load only in local preview; eBay strips external <link> tags on upload.
+     Font stacks below fall back to Impact / Segoe UI / system-ui so the listing still looks good. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Saira+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ttj-red: #E31E24;
+  --ttj-red-dark: #B91419;
+  --ttj-red-light: #FF3B3F;
+  --ttj-dark: #111827;
+  --ttj-darker: #0B111E;
+  --ttj-steel: #6B7280;
+  --ttj-steel-light: #9CA3AF;
+  --ttj-bg: #F9FAFB;
+  --ttj-card: #FFFFFF;
+  --ttj-border: #E5E7EB;
+  --ttj-text: #111827;
+  --ttj-text-soft: #4B5563;
+  --ttj-green: #10B981;
+  --ttj-amber: #F59E0B;
+  --font-display: 'Saira Condensed', Impact, 'Arial Narrow Bold', 'Oswald', sans-serif;
+  --font-body: 'Rajdhani', 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+}
+
+.ttj-wrap * { margin: 0; padding: 0; box-sizing: border-box; }
+.ttj-wrap {
+  font-family: var(--font-body);
+  color: var(--ttj-text);
+  background: var(--ttj-bg);
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+.ttj-wrap img { max-width: 100%; height: auto; display: block; }
+.ttj-wrap a { color: var(--ttj-red); text-decoration: none; }
+.ttj-wrap a:hover { color: var(--ttj-red-dark); text-decoration: underline; }
+
+/* ========== 1. MOBILE SUMMARY (first in body — eBay mobile extractor) ========== */
+.ttj-mobile-desc {
+  display: block;
+  padding: 16px 20px;
+  background: #FFF7E6;
+  border-left: 4px solid var(--ttj-amber);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ttj-text);
+}
+
+/* ========== 2. HEADER ========== */
+.ttj-header {
+  background: var(--ttj-dark);
+  background: linear-gradient(180deg, var(--ttj-darker) 0%, var(--ttj-dark) 100%);
+  padding: 22px 24px 24px;
+  position: relative;
+  border-bottom: 3px solid var(--ttj-red);
+}
+.ttj-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.ttj-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  background: var(--ttj-red);
+  border-radius: 4px;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.ttj-logo-accent { color: var(--ttj-dark); background: #fff; padding: 2px 8px; font-size: 26px; }
+.ttj-tagline {
+  text-align: right;
+  color: #fff;
+}
+.ttj-tagline-lead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.ttj-tagline small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--ttj-steel-light);
+  letter-spacing: 0.5px;
+  margin-top: 3px;
+}
+
+/* ========== 3. NAV ========== */
+.ttj-nav {
+  background: #000;
+  padding: 0;
+  border-bottom: 1px solid #222;
+}
+.ttj-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ttj-nav li { border-right: 1px solid #222; }
+.ttj-nav li:last-child { border-right: none; }
+.ttj-nav a {
+  display: block;
+  color: #fff;
+  padding: 14px 24px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.ttj-nav a:hover {
+  background: var(--ttj-red);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ========== 4. HERO BANNER ========== */
+.ttj-banner {
+  background: linear-gradient(135deg, var(--ttj-red) 0%, var(--ttj-red-dark) 60%, var(--ttj-darker) 100%);
+  color: #fff;
+  padding: 44px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ttj-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 14px);
+  pointer-events: none;
+}
+.ttj-banner h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 38px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  position: relative;
+}
+.ttj-banner p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
+  letter-spacing: 1px;
+  position: relative;
+  opacity: 0.95;
+}
+
+/* ========== 5. PRODUCT TITLE + SKU ========== */
+.ttj-title-block {
+  background: var(--ttj-card);
+  padding: 32px 28px 24px;
+  border-bottom: 1px solid var(--ttj-border);
+}
+.ttj-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--ttj-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.ttj-sku {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 16px;
+  background: var(--ttj-red);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+/* ========== 6. HERO IMAGE ========== */
+.ttj-hero-img {
+  background: var(--ttj-card);
+  padding: 0 28px 28px;
+}
+.ttj-hero-img img {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 6px;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+/* ========== Section base ========== */
+.ttj-section {
+  background: var(--ttj-card);
+  padding: 36px 28px 40px;
+  border-top: 1px solid var(--ttj-border);
+}
+.ttj-section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--ttj-text);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 22px;
+  padding-left: 14px;
+  border-left: 5px solid var(--ttj-red);
+  line-height: 1.1;
+}
+.ttj-section p + p { margin-top: 14px; }
+.ttj-section strong { color: var(--ttj-text); font-weight: 700; }
+.ttj-section ul, .ttj-section ol { margin: 10px 0 10px 22px; }
+.ttj-section li { margin: 6px 0; line-height: 1.55; }
+
+.ttj-callout {
+  background: #FFF7E6;
+  border-left: 4px solid var(--ttj-amber);
+  padding: 14px 18px;
+  margin: 18px 0;
+  font-weight: 600;
+  color: var(--ttj-text);
+}
+.ttj-callout strong { color: #92400E; }
+
+/* ========== 8. PRODUCT IMAGES GRID ========== */
+.ttj-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+.ttj-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--ttj-border);
+  border-radius: 6px;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  background: #fafafa;
+}
+
+/* ========== 10. WARRANTY — structured ========== */
+.ttj-warranty h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ttj-red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 22px 0 10px;
+}
+.ttj-warranty h3:first-of-type { margin-top: 10px; }
+.ttj-warranty ol { margin-left: 24px; }
+
+/* ========== 14. PAYMENT METHODS ========== */
+.ttj-payment-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.ttj-payment-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ttj-bg);
+  border: 2px solid var(--ttj-border);
+  padding: 12px 20px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ttj-text);
+  border-radius: 4px;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+/* ========== 16. ABOUT — trust grid ========== */
+.ttj-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+.ttj-trust-card {
+  background: var(--ttj-bg);
+  border: 1px solid var(--ttj-border);
+  padding: 22px 20px;
+  text-align: center;
+  border-radius: 6px;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+.ttj-trust-icon {
+  font-size: 34px;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: var(--ttj-red);
+}
+.ttj-trust-card h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+.ttj-trust-card p { font-size: 14px; color: var(--ttj-text-soft); }
+
+/* ========== 17. CONTACT ========== */
+.ttj-contact-card {
+  margin-top: 18px;
+  padding: 22px 24px;
+  background: var(--ttj-bg);
+  border: 2px solid var(--ttj-red);
+  border-radius: 6px;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+.ttj-contact-card-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ttj-red);
+  margin-bottom: 10px;
+}
+
+/* ========== 18. COPYRIGHT ========== */
+.ttj-copyright {
+  background: var(--ttj-red);
+  color: #fff;
+  text-align: center;
+  padding: 22px 20px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-top: 3px solid var(--ttj-dark);
+}
+.ttj-copyright small {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+  opacity: 0.88;
+}
+
+/* ========== FALLBACK for browsers without clip-path support ========== */
+@supports not (clip-path: polygon(0 0, 1px 0, 1px 1px)) {
+  .ttj-wrap [style*="clip-path"], .ttj-logo, .ttj-sku, .ttj-payment-chip,
+  .ttj-trust-card, .ttj-contact-btn, .ttj-gallery img, .ttj-hero-img img {
+    clip-path: none !important;
+    border-radius: 6px;
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 720px) {
+  .ttj-wrap { font-size: 15px; }
+  .ttj-header { padding: 18px 18px 20px; }
+  .ttj-header-inner { justify-content: center; text-align: center; }
+  .ttj-logo { font-size: 26px; padding: 8px 14px; }
+  .ttj-tagline { text-align: center; }
+  .ttj-tagline-lead { font-size: 16px; }
+  .ttj-nav a { padding: 12px 14px; font-size: 12px; letter-spacing: 0.8px; }
+  .ttj-banner { padding: 30px 18px; }
+  .ttj-banner h2 { font-size: 26px; letter-spacing: 1px; }
+  .ttj-banner p { font-size: 14px; }
+  .ttj-title-block, .ttj-hero-img, .ttj-section { padding-left: 18px; padding-right: 18px; }
+  .ttj-title { font-size: 24px; }
+  .ttj-section-title { font-size: 21px; }
+  .ttj-gallery { grid-template-columns: 1fr; }
+  .ttj-copyright { font-size: 16px; letter-spacing: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ttj-wrap * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="ttj-wrap">
+
+<!-- 1. MOBILE SUMMARY (first in body for eBay mobile extractor) -->
+<span class="ttj-mobile-desc">
+  <strong>TOP TIER JAPAN</strong> — Authentic JDM engines, transmissions &amp; performance parts, imported direct from Japan. All motors clean, complete &amp; 100% working order. <strong>30-day limited warranty</strong> on used replacement and performance engines/transmissions from date of possession. <strong>Free ground shipping</strong> to the Lower 48 states (excludes AK, HI, PR). Residential / liftgate delivery +$80. Local pickup available at our Phoenix, AZ facility (ZIP 85035). Visa, Mastercard &amp; PayPal accepted. Questions? Message us through eBay before purchase.
+</span>
+
+<!-- 2. HEADER -->
+<header class="ttj-header" id="top">
+  <div class="ttj-header-inner">
+    <span class="ttj-logo" aria-label="Top Tier Japan">
+      TOP TIER <span class="ttj-logo-accent">JAPAN</span>
+    </span>
+    <div class="ttj-tagline">
+      <span class="ttj-tagline-lead">Authentic JDM Imports</span>
+      <small>Phoenix, AZ &middot; Mon–Fri &middot; 9am–6pm MST</small>
+    </div>
+  </div>
+</header>
+
+<!-- 3. NAV -->
+<nav class="ttj-nav">
+  <ul>
+    <li><a href="#top">Home</a></li>
+    <li><a href="#aboutus">About Us</a></li>
+    <li><a href="#shippinginfo">Shipping Policy</a></li>
+    <li><a href="#payment">Payment Options</a></li>
+    <li><a href="#returns">Returns Policy</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- 4. HERO BANNER -->
+<section class="ttj-banner">
+  <h2>Authentic JDM Engines &amp; Performance Parts</h2>
+  <p>Imported direct from Japan &middot; Clean, Complete &amp; Tested</p>
+</section>
+
+<!-- 5. TITLE + SKU -->
+<section class="ttj-title-block">
+  <h1 class="ttj-title">JDM Honda K24A Engine — Sample Listing Title Goes Here</h1>
+  <span class="ttj-sku">SKU: TTJ-00000</span>
+</section>
+
+<!-- 6. HERO IMAGE -->
+<section class="ttj-hero-img">
+  <img src="images/ttj/hero.jpg" alt="Featured product — replace with your listing hero image">
+</section>
+
+<!-- 7. PRODUCT INFORMATION -->
+<section class="ttj-section" id="productinfo">
+  <h2 class="ttj-section-title">Product Information</h2>
+  <p>Replace this paragraph with the specific product description for your listing — engine code, generation, mileage, compression notes, compatible vehicles, and any accessories included.</p>
+  <p><strong>Free Shipping to the Lower 48 States.</strong> Free Shipping does not include HI, PR, AK.</p>
+  <p>Buyers from Puerto Rico, Hawaii, Alaska, and international buyers should contact us via phone or message before making a purchase or bid.</p>
+  <p>
+    If you require a lift gate delivery service it is <strong>$80 additional</strong>.<br>
+    Transit time: <strong>3–10 business days</strong>.
+  </p>
+  <p>
+    <strong>Local Pickups Available</strong><br>
+    TOP TIER JAPAN LLC<br>
+    Phoenix, AZ 85035<br>
+    Message us through eBay to schedule a pickup appointment.
+  </p>
+</section>
+
+<!-- 8. PRODUCT IMAGES -->
+<section class="ttj-section">
+  <h2 class="ttj-section-title">Product Images</h2>
+  <div class="ttj-gallery">
+    <img src="images/ttj/detail1.jpg" alt="Product detail photo 1">
+    <img src="images/ttj/detail2.jpg" alt="Product detail photo 2">
+    <img src="images/ttj/detail3.jpg" alt="Product detail photo 3">
+    <img src="images/ttj/detail4.jpg" alt="Product detail photo 4">
+  </div>
+</section>
+
+<!-- 9. DELIVERY INFORMATION -->
+<section class="ttj-section" id="shippinginfo">
+  <h2 class="ttj-section-title">Delivery Information</h2>
+  <p>TOP TIER JAPAN provides <strong>free ground shipping</strong> on all orders to the Lower 48 States. Hawaii, Puerto Rico, and Alaska are <strong>NOT</strong> qualified for free shipping.</p>
+  <div class="ttj-callout">
+    <strong>States of NY, NJ, DE, NH, ME, VT, and RI may not qualify for free shipping.</strong> Please contact us before purchase to confirm.
+  </div>
+  <p>Please phone or email us for a quote. Free Shipping is offered only for urban locations (major cities only). Any rural locations (small towns and counties) will be extra or would require you to pick up at the closest dock location.</p>
+  <p>Shipping address can be either a business, residential, or pick up from the dock — we do not charge extra for residential delivery.</p>
+  <p>If you are paying via PayPal we can only ship to your confirmed address (no exceptions).</p>
+  <p>If you require residential delivery with lift gate service, it is <strong>$80 additional</strong>.</p>
+</section>
+
+<!-- 10. WARRANTY -->
+<section class="ttj-section ttj-warranty" id="warranty">
+  <h2 class="ttj-section-title">Limited Warranty Offered by TOP TIER JAPAN</h2>
+  <p>Please take the time to thoroughly read through our terms and conditions and be sure you are ok with this policy before making your purchase.</p>
+
+  <h3>A. TOP TIER JAPAN offers the following warranty for the parts sold:</h3>
+  <ol>
+    <li>Used Replacement Engines — 30 Days from date of possession</li>
+    <li>Used Performance Engines — 30 Days from date of possession</li>
+    <li>Rotary Engines (Mazda RX-7 13BT / 13BTT / 20B) — <strong>No Warranty</strong></li>
+    <li>All Electrical Parts and accessories on Engine — <strong>No Warranty</strong></li>
+    <li>Used Performance Transmissions — 30 Days from date of possession</li>
+    <li>Used Replacement Transmissions — 30 Days from date of possession</li>
+  </ol>
+
+  <h3>B. Items and conditions covered by the limited warranty:</h3>
+  <ol>
+    <li>All internal engine parts including: pistons, piston rings, piston pins, crankshaft and main bearings, connecting rods and rod bearings, camshaft and camshaft bearings, timing chain and timing gears, intake and exhaust valves, valve springs, oil pump, push rods, rocker arms and shafts. The engine block, cylinder walls and cylinder head are also warranted to be free of cracks or distortion.</li>
+    <li>Head gaskets are warranted for 30 days only, irrespective of the application as stated in Section A.</li>
+    <li>TOP TIER JAPAN reserves the right to repair with rebuilt or serviceable used parts, or exchange the engine at its own discretion and determination.</li>
+  </ol>
+
+  <h3>C. Items not covered:</h3>
+  <p>All external parts attached to the engines — e.g., intake and exhaust manifolds, carburetors, distributor, starter, emission control devices, flywheel, clutch and pressure plate, water pump, thermostat, belts, hoses, oil pan, valve cover, sensors, electronic parts (distributor, wires, computers, injectors, etc.), drive shafts, engine mounts, half shafts, etc.</p>
+
+  <h3>D. This limited warranty does not cover:</h3>
+  <ol>
+    <li>Any labor charges for installation or removal of engine or part sold. (NO EXCEPTIONS)</li>
+    <li>Any damage caused by abuse, neglect, accident, or natural perils.</li>
+    <li>Loss caused by the engine being improperly installed.</li>
+    <li>Towing charges and/or freight or delivery charges.</li>
+    <li>Loss caused by overheating. The warranty does not cover oil leaks, blown head gasket, or any other engine damage due to overheating caused by poor water circulation, clogged radiator, stuck thermostat, or a faulty water pump, etc.</li>
+    <li>Decrease in performance of any covered part due to normal wear and tear (unless actual breakdown occurs), having regard to inherent manufacturing faults in some engine models.</li>
+    <li>Loss caused by any modification or use of the engine for which it was not originally designed.</li>
+    <li>The engine if it is used for competitive driving, drifting, or racing.</li>
+    <li>Loss caused by the failure of a part or parts of the engine that are not covered by this limited warranty.</li>
+    <li>Tune-ups and adjustments, filters, hoses, belts, lubricants, coolants, emission control devices, spark plugs, tune-up parts, etc.</li>
+    <li>Deterioration or pre-ignition damage.</li>
+    <li>Repairs performed without prior authorization from TOP TIER JAPAN.</li>
+    <li>Loss caused by defective timing belt. A brand new timing belt must be installed.</li>
+    <li>Loss caused by modification or forced induction (NOS, turbos, supercharged) for which the engine was not designed.</li>
+  </ol>
+
+  <h3>E. Limitation of duration:</h3>
+  <p>Repairs or exchanges will not extend this limited warranty beyond the described term on this form (Item A).</p>
+
+  <h3>F. Disclaimer 1:</h3>
+  <p>This limited warranty is in lieu of any and all other expressed warranties of TOP TIER JAPAN. Any warranty implied is limited to the duration of this limited warranty. TOP TIER JAPAN does not assume or authorize any person to assume on its behalf any other obligation or liability. By making a purchase from TOP TIER JAPAN you agree with our warranty terms and conditions as listed in this section of the warranty.</p>
+
+  <h3>G. Disclaimer 2:</h3>
+  <p>TOP TIER JAPAN will not be responsible for incidental or consequential damages arising from loss of use, loss of time, inconvenience, or commercial loss, or any other consequential damage or loss. TOP TIER JAPAN does not provide install instructions or fitment guides for your purchase — be sure to know what you are buying before making your purchase.</p>
+
+  <h3>H. Warranty claim procedure:</h3>
+  <ol>
+    <li>To file a warranty claim, please contact TOP TIER JAPAN via email or phone and we will assist you in the procedure.</li>
+    <li>The customer is responsible for all freight charges on the return of defective engines. No replacement engine will be sent until our staff have inspected and verified the returned defective engine in question. If the engine is defective, TOP TIER JAPAN will either send a replacement engine or issue a refund minus the shipping charges. This decision is based on TOP TIER JAPAN's discretion.</li>
+    <li>The engine MUST be returned in the same condition it was sent in. If parts are missing or not in the same condition, it will be refused by the receiving team.</li>
+  </ol>
+
+  <p>Engines complete with accessories may not comply with the emission control laws of the state in which they are being sold or used. State and/or federal authorities require that you change over the emission devices from your old engine to the engine you are installing to make it comply. Please note that TOP TIER JAPAN is not responsible for emissions or smog certification. The purchase price represents the cost of the long block only (i.e., cylinder head and short block only).</p>
+</section>
+
+<!-- 11. MAINTENANCE REQUIREMENTS -->
+<section class="ttj-section" id="maintenance">
+  <h2 class="ttj-section-title">Maintenance Requirements</h2>
+  <div class="ttj-callout">
+    <strong>IMPORTANT:</strong> Failure to follow these maintenance requirements voids the warranty.
+  </div>
+  <ol>
+    <li>Must be installed, maintained, or adjusted by a certified mechanic.</li>
+    <li>Set ignition to specification as recommended by the manufacturer.</li>
+    <li>Change oil after 200 initial miles post-install.</li>
+    <li>Check cooling system and service if rusted or contaminated with oil, and replace coolant.</li>
+    <li>Must replace the timing belt, water pump, tensioner, oil filter, and spark plugs.</li>
+  </ol>
+</section>
+
+<!-- 12. RECEIVING AND INSPECTION -->
+<section class="ttj-section" id="receiving">
+  <h2 class="ttj-section-title">Receiving &amp; Inspection</h2>
+  <p>Once you receive your item, please do not sign the release documents without fully inspecting the outer packaging for noticeable signs of damage. The freight companies will not let you open the packaging prior to signing the documents, therefore you must note any signs of damage based on the external packaging.</p>
+  <p>Shipping insurance is provided by the freight company, not by TOP TIER JAPAN LLC. If you sign the form and do not note any possible damages, the freight company will be relieved of all responsibilities and you will not be reimbursed for any damages done to your shipment caused during shipping.</p>
+  <p>You must notify TOP TIER JAPAN of any damages caused by mishandling during shipping.</p>
+  <div class="ttj-callout">
+    <strong>PLEASE DO NOT SIGN THE RELEASE FORM OR LET THE DRIVER LEAVE WITHOUT FIRST INSPECTING THE PACKAGING FOR POSSIBLE DAMAGES.</strong>
+  </div>
+</section>
+
+<!-- 13. SALES AND DEPOSIT POLICY -->
+<section class="ttj-section" id="sales">
+  <h2 class="ttj-section-title">Sales &amp; Deposit Policy</h2>
+  <p>All sales are final. TOP TIER JAPAN does not offer refunds or exchanges outside of the warranty terms above.</p>
+  <p>All deposits placed are <strong>non-refundable</strong> unless specified in writing from TOP TIER JAPAN.</p>
+  <p>Any orders placed that have not been shipped or picked up can be cancelled and a full refund will be issued. If your order has been shipped or picked up, TOP TIER JAPAN cannot cancel the transaction.</p>
+</section>
+
+<!-- 14. PAYMENT METHODS ACCEPTED -->
+<section class="ttj-section" id="payment">
+  <h2 class="ttj-section-title">Payment Methods Accepted</h2>
+  <p>TOP TIER JAPAN accepts the following methods of payment through eBay's managed payments system:</p>
+  <div class="ttj-payment-list">
+    <span class="ttj-payment-chip">Visa</span>
+    <span class="ttj-payment-chip">Mastercard</span>
+    <span class="ttj-payment-chip">American Express</span>
+    <span class="ttj-payment-chip">PayPal</span>
+    <span class="ttj-payment-chip">Apple Pay</span>
+    <span class="ttj-payment-chip">Google Pay</span>
+  </div>
+  <p style="margin-top:18px">If you purchase this item, we require full payment within <strong>24 hours</strong>. By purchasing this item you have agreed with all our terms and are aware of what you are purchasing.</p>
+</section>
+
+<!-- 15. RETURNS POLICY -->
+<section class="ttj-section" id="returns">
+  <h2 class="ttj-section-title">Returns Policy</h2>
+  <p><strong>30-day returns.</strong> Buyer pays for return shipping. If you use an eBay shipping label, it will be deducted from your refund amount.</p>
+  <p>The item must be returned in the same condition it was sent in. If parts are missing or not in the same condition, it will be refused by the receiving team and no refund will be issued.</p>
+  <p>Please contact us prior to initiating a return so we can assist you through the process and provide the correct return address.</p>
+</section>
+
+<!-- 16. ABOUT US / WHY BUY FROM TOP TIER JAPAN -->
+<section class="ttj-section" id="aboutus">
+  <h2 class="ttj-section-title">Why Buy From Top Tier Japan</h2>
+  <p>All of our motors are clean, complete, and in 100% working order. We encourage you to compare our products, service, and reputation against any competitor.</p>
+  <div class="ttj-trust-grid">
+    <div class="ttj-trust-card">
+      <div class="ttj-trust-icon">&#10004;</div>
+      <h4>Tested &amp; Verified</h4>
+      <p>Every engine inspected before it ships — what you see is what you get.</p>
+    </div>
+    <div class="ttj-trust-card">
+      <div class="ttj-trust-icon">&#128737;</div>
+      <h4>30-Day Warranty</h4>
+      <p>Limited warranty on used replacement and performance engines / transmissions.</p>
+    </div>
+    <div class="ttj-trust-card">
+      <div class="ttj-trust-icon">&#128666;</div>
+      <h4>Free Ground Shipping</h4>
+      <p>Free shipping to most of the Lower 48 — major urban destinations.</p>
+    </div>
+    <div class="ttj-trust-card">
+      <div class="ttj-trust-icon">&#127471;&#127477;</div>
+      <h4>Imported From Japan</h4>
+      <p>Authentic JDM sourcing &mdash; engines direct from Japanese domestic market.</p>
+    </div>
+  </div>
+  <p style="margin-top:22px">If you have any issues with any items you have received from us, please contact us <strong>prior to leaving negative feedback</strong>. We pride ourselves on the highest-quality customer service in the industry and are always willing to go the extra mile for you — our loyal customer.</p>
+  <p style="margin-top:14px; font-family: var(--font-display); font-weight:700; font-size:18px; letter-spacing:1px; text-transform:uppercase; color:var(--ttj-red);">Thank you for choosing Top Tier Japan.</p>
+</section>
+
+<!-- 17. CONTACT -->
+<section class="ttj-section" id="contact">
+  <h2 class="ttj-section-title">Contact Us</h2>
+  <p>Have questions about fitment, shipping to your area, or warranty coverage? Reach out before purchase — we'd rather answer a quick question than process a return.</p>
+  <div class="ttj-contact-card">
+    <div class="ttj-contact-card-title">Message Us Through eBay</div>
+    <p>Use the <strong>&ldquo;Contact seller&rdquo;</strong> link at the top of this listing to send us a message. We monitor eBay messages continuously during business hours and respond to most inquiries within <strong>one business day</strong>.</p>
+    <p style="margin-top:10px; font-size:14px; color: var(--ttj-text-soft);">Mon–Fri &middot; 9am–6pm MST &middot; TOP TIER JAPAN LLC &middot; Phoenix, AZ 85035</p>
+  </div>
+</section>
+
+<!-- 18. COPYRIGHT -->
+<div class="ttj-copyright">
+  TOP TIER JAPAN &mdash; 2026
+  <small>All rights reserved &middot; A JMI family brand</small>
+</div>
+
+</div>
+</body>
+</html>
