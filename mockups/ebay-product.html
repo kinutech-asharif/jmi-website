@@ -112,29 +112,24 @@
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 .ttj-wordmark-kana {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 12px;
-  padding-left: 14px;
+  display: block;
+  margin-top: 8px;
   font-family: var(--ttj-font-kana);
-  font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.38em;
-  color: var(--ttj-red);
-  text-shadow: 0 0 14px rgba(227, 30, 36, 0.38);
-  position: relative;
-  line-height: 1;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--ttj-steel-3);
 }
 .ttj-wordmark-kana::before {
   content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3px;
-  height: 16px;
+  display: inline-block;
+  width: 18px;
+  height: 1px;
   background: var(--ttj-red);
-  box-shadow: 0 0 10px rgba(227, 30, 36, 0.55);
+  vertical-align: middle;
+  margin-right: 8px;
+  position: relative;
+  top: -2px;
 }
 .ttj-meta {
   text-align: right;
