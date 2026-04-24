@@ -8,7 +8,7 @@
      Font stacks below fall back to Impact / Segoe UI / system-ui so the listing still looks good. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Saira+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Saira+Condensed:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --ttj-red: #E31E24;
@@ -86,6 +86,34 @@
   gap: 8px;
 }
 .ttj-logo-accent { color: var(--ttj-dark); background: #fff; padding: 2px 8px; font-size: 26px; }
+.ttj-logo-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.ttj-logo-kana {
+  font-family: 'Zen Kaku Gothic New', 'Yu Gothic', 'Hiragino Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.38em;
+  color: var(--ttj-red);
+  text-shadow: 0 0 14px rgba(227, 30, 36, 0.45);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1;
+}
+.ttj-logo-kana::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background: var(--ttj-red);
+  box-shadow: 0 0 10px rgba(227, 30, 36, 0.55);
+}
 .ttj-tagline {
   text-align: right;
   color: #fff;
@@ -421,9 +449,12 @@
 <!-- 2. HEADER -->
 <header class="ttj-header" id="top">
   <div class="ttj-header-inner">
-    <span class="ttj-logo" aria-label="Top Tier Japan">
-      TOP TIER <span class="ttj-logo-accent">JAPAN</span>
-    </span>
+    <div class="ttj-logo-lockup" aria-label="Top Tier Japan">
+      <span class="ttj-logo">
+        TOP TIER <span class="ttj-logo-accent">JAPAN</span>
+      </span>
+      <span class="ttj-logo-kana" aria-hidden="true">トップティアジャパン</span>
+    </div>
     <div class="ttj-tagline">
       <span class="ttj-tagline-lead">Authentic JDM Imports</span>
       <small>Phoenix, AZ &middot; Mon–Fri &middot; 9am–6pm MST</small>
