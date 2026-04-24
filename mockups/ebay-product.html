@@ -537,6 +537,13 @@
   .ttj-header-inner { justify-content: center; text-align: center; flex-direction: column; align-items: center; }
   .ttj-wordmark-row { font-size: 30px; letter-spacing: 0.12em; }
   .ttj-meta { text-align: center; }
+  /* Force clean 3x2 grid on narrow phones so a 6-item nav never orphans a link.
+     Native flex-wrap with flex:1-1-auto packs 5 items on iPhone 12 width and
+     wraps the 6th (CONTACT) alone — ugly and off-brand. */
+  .ttj-nav ul { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .ttj-nav li { flex: initial; border-right: 1px solid rgba(255, 255, 255, 0.08); }
+  .ttj-nav li:nth-child(3n) { border-right: none; }
+  .ttj-nav li:nth-child(n+4) { border-top: 1px solid rgba(255, 255, 255, 0.08); }
   .ttj-nav a { padding: 12px 8px; font-size: 10.5px; letter-spacing: 0.14em; }
   .ttj-hero { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 0 100%); }
   .ttj-hero-img { max-height: 360px; }
