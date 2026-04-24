@@ -300,10 +300,24 @@
 }
 .ttj-section--muted p, .ttj-section--muted li { color: var(--ttj-steel-1); font-size: 15px; }
 
-/* Variant: dark (hero "Why Buy From Us" moment) */
+/* Variant: dark (hero "Why Buy From Us" moment) — layered JDM wallpaper under heavy scrim */
 .ttj-section--dark {
-  background: var(--ttj-ink);
+  background-color: var(--ttj-ink);
+  background-image:
+    linear-gradient(135deg, rgba(11, 17, 30, 0.94) 0%, rgba(11, 17, 30, 0.82) 55%, rgba(11, 17, 30, 0.96) 100%),
+    url('images/ttj/about-bg.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
   color: #E5E7EB;
+  position: relative;
+}
+.ttj-section--dark::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--ttj-red);
 }
 .ttj-section--dark .ttj-section-title {
   color: #fff;
