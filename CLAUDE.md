@@ -402,6 +402,13 @@ A **generic brand wrapper**, not a product-specific page. Only a small number of
 - External `<link rel="stylesheet">` (Google Fonts link included — eBay silently drops it, so font stacks must degrade gracefully)
 - `<input>` of any type (stricter than eBay requires, but removes a whole class of sanitizer risk)
 
+**Off-platform contact info — also prohibited (can get the listing flagged or removed):**
+- Phone numbers in any format (`(555) 555-1234`, `1-800-WORDS`, `+1 ...`)
+- Email addresses
+- `tel:` and `mailto:` anchor links
+- External "contact us" URLs pointing off-eBay
+- Direct customers to eBay's built-in "Contact seller" / messaging system instead. Phone/email belong on the seller's Store "About" page, not in the item description.
+
 **Allowlist (safe to use):**
 - HTML5 structural tags
 - Single inline `<style>` block in `<head>` + inline `style=""` attributes

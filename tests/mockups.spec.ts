@@ -183,6 +183,24 @@ test.describe('eBay Product Mockup', () => {
     }
   });
 
+  test('should not contain phone numbers, emails, or tel:/mailto: links (eBay flags off-platform contact)', async ({ page }) => {
+    const html = await page.content();
+    // Plain-text body for phone/email scan — avoids false positives from CSS @media, url(), etc.
+    const text = await page.locator('body').innerText();
+
+    expect(html, 'tel: link found — eBay prohibits').not.toMatch(/href\s*=\s*["']tel:/i);
+    expect(html, 'mailto: link found — eBay prohibits').not.toMatch(/href\s*=\s*["']mailto:/i);
+    expect(text, 'phone number found in body text — eBay prohibits').not.toMatch(
+      /(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}/
+    );
+    expect(text, 'toll-free word phone found — eBay prohibits').not.toMatch(
+      /\b1[-.\s]?8(?:00|33|44|55|66|77|88)[-.\s][A-Z]{3,}/
+    );
+    expect(text, 'email address found in body text — eBay prohibits').not.toMatch(
+      /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/
+    );
+  });
+
   test('should fit within eBay 500,000-char description budget', async ({ page }) => {
     const html = await page.content();
     expect(html.length).toBeLessThan(500_000);

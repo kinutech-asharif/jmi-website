@@ -86,21 +86,26 @@
   gap: 8px;
 }
 .ttj-logo-accent { color: var(--ttj-dark); background: #fff; padding: 2px 8px; font-size: 26px; }
-.ttj-phone {
+.ttj-tagline {
+  text-align: right;
+  color: #fff;
+}
+.ttj-tagline-lead {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
+  letter-spacing: 1.2px;
   color: #fff;
-  letter-spacing: 1px;
+  text-transform: uppercase;
 }
-.ttj-phone .ttj-phone-icon { color: var(--ttj-red); margin-right: 8px; }
-.ttj-phone small {
+.ttj-tagline small {
   display: block;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 12px;
   color: var(--ttj-steel-light);
   letter-spacing: 0.5px;
+  margin-top: 3px;
 }
 
 /* ========== 3. NAV ========== */
@@ -332,42 +337,22 @@
 .ttj-trust-card p { font-size: 14px; color: var(--ttj-text-soft); }
 
 /* ========== 17. CONTACT ========== */
-.ttj-contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 20px;
+.ttj-contact-card {
+  margin-top: 18px;
+  padding: 22px 24px;
+  background: var(--ttj-bg);
+  border: 2px solid var(--ttj-red);
+  border-radius: 6px;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
 }
-.ttj-contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 26px;
-  background: var(--ttj-red);
-  color: #fff;
+.ttj-contact-card-title {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
   letter-spacing: 1.2px;
-  border-radius: 4px;
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-  transition: background 0.25s ease, transform 0.2s ease;
-}
-.ttj-contact-btn:hover {
-  background: var(--ttj-red-dark);
-  color: #fff;
-  text-decoration: none;
-  transform: translateY(-2px);
-}
-.ttj-contact-btn.secondary {
-  background: transparent;
-  color: var(--ttj-text);
-  border: 2px solid var(--ttj-text);
-}
-.ttj-contact-btn.secondary:hover {
-  background: var(--ttj-text);
-  color: #fff;
+  text-transform: uppercase;
+  color: var(--ttj-red);
+  margin-bottom: 10px;
 }
 
 /* ========== 18. COPYRIGHT ========== */
@@ -407,7 +392,8 @@
   .ttj-header { padding: 18px 18px 20px; }
   .ttj-header-inner { justify-content: center; text-align: center; }
   .ttj-logo { font-size: 26px; padding: 8px 14px; }
-  .ttj-phone { font-size: 18px; }
+  .ttj-tagline { text-align: center; }
+  .ttj-tagline-lead { font-size: 16px; }
   .ttj-nav a { padding: 12px 14px; font-size: 12px; letter-spacing: 0.8px; }
   .ttj-banner { padding: 30px 18px; }
   .ttj-banner h2 { font-size: 26px; letter-spacing: 1px; }
@@ -429,7 +415,7 @@
 
 <!-- 1. MOBILE SUMMARY (first in body for eBay mobile extractor) -->
 <span class="ttj-mobile-desc">
-  <strong>TOP TIER JAPAN</strong> — Authentic JDM engines, transmissions &amp; performance parts, imported direct from Japan. All motors clean, complete &amp; 100% working order. <strong>30-day limited warranty</strong> on used replacement and performance engines/transmissions from date of possession. <strong>Free ground shipping</strong> to the Lower 48 states (excludes AK, HI, PR). Residential / liftgate delivery +$80. Local pickup available at our Phoenix, AZ facility (ZIP 85035). Visa, Mastercard &amp; PayPal accepted. Questions? Call us before purchase.
+  <strong>TOP TIER JAPAN</strong> — Authentic JDM engines, transmissions &amp; performance parts, imported direct from Japan. All motors clean, complete &amp; 100% working order. <strong>30-day limited warranty</strong> on used replacement and performance engines/transmissions from date of possession. <strong>Free ground shipping</strong> to the Lower 48 states (excludes AK, HI, PR). Residential / liftgate delivery +$80. Local pickup available at our Phoenix, AZ facility (ZIP 85035). Visa, Mastercard &amp; PayPal accepted. Questions? Message us through eBay before purchase.
 </span>
 
 <!-- 2. HEADER -->
@@ -438,9 +424,9 @@
     <span class="ttj-logo" aria-label="Top Tier Japan">
       TOP TIER <span class="ttj-logo-accent">JAPAN</span>
     </span>
-    <div class="ttj-phone">
-      <span class="ttj-phone-icon">&#9742;</span> (602) 000-0000
-      <small>Mon–Fri · 9am–6pm MST</small>
+    <div class="ttj-tagline">
+      <span class="ttj-tagline-lead">Authentic JDM Imports</span>
+      <small>Phoenix, AZ &middot; Mon–Fri &middot; 9am–6pm MST</small>
     </div>
   </div>
 </header>
@@ -488,7 +474,7 @@
     <strong>Local Pickups Available</strong><br>
     TOP TIER JAPAN LLC<br>
     Phoenix, AZ 85035<br>
-    Tel: (602) 000-0000
+    Message us through eBay to schedule a pickup appointment.
   </p>
 </section>
 
@@ -669,15 +655,11 @@
 <section class="ttj-section" id="contact">
   <h2 class="ttj-section-title">Contact Us</h2>
   <p>Have questions about fitment, shipping to your area, or warranty coverage? Reach out before purchase — we'd rather answer a quick question than process a return.</p>
-  <div class="ttj-contact-row">
-    <a class="ttj-contact-btn" href="tel:+16020000000" target="_blank" rel="noopener">
-      <span>&#9742;</span> Call (602) 000-0000
-    </a>
-    <a class="ttj-contact-btn secondary" href="mailto:sales@toptierjapan.com" target="_blank" rel="noopener">
-      <span>&#9993;</span> Email Sales
-    </a>
+  <div class="ttj-contact-card">
+    <div class="ttj-contact-card-title">Message Us Through eBay</div>
+    <p>Use the <strong>&ldquo;Contact seller&rdquo;</strong> link at the top of this listing to send us a message. We monitor eBay messages continuously during business hours and respond to most inquiries within <strong>one business day</strong>.</p>
+    <p style="margin-top:10px; font-size:14px; color: var(--ttj-text-soft);">Mon–Fri &middot; 9am–6pm MST &middot; TOP TIER JAPAN LLC &middot; Phoenix, AZ 85035</p>
   </div>
-  <p style="margin-top:18px; font-size:14px; color: var(--ttj-text-soft);">Mon–Fri · 9am – 6pm MST · TOP TIER JAPAN LLC · Phoenix, AZ 85035</p>
 </section>
 
 <!-- 18. COPYRIGHT -->
