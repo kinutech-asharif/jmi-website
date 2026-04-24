@@ -127,11 +127,82 @@ test.describe('Product Detail Mockup', () => {
   });
 });
 
-test.describe('Cross-page Navigation', () => {
-  test('root index should redirect to homepage', async ({ page }) => {
-    await page.goto('/');
+test.describe('eBay Product Mockup', () => {
+  const URL = '/mockups/ebay-product.html';
 
-    await page.waitForURL(/mockups\/home\.html/);
-    await expect(page).toHaveTitle(/Japan Motor Import/);
+  test.beforeEach(async ({ page }) => {
+    await page.goto(URL);
+  });
+
+  test('should load successfully', async ({ page }) => {
+    await expect(page).toHaveTitle(/TOP TIER JAPAN/);
+  });
+
+  test('should place mobile-summary span first in body and keep it under 800 chars', async ({ page }) => {
+    const firstEl = await page.locator('body > *, .ttj-wrap > *').first();
+    // The wrap is the first body child; mobile-desc is the first child inside the wrap.
+    const firstInsideWrap = page.locator('.ttj-wrap > *').first();
+    await expect(firstInsideWrap).toHaveClass(/ttj-mobile-desc/);
+
+    const text = (await page.locator('.ttj-mobile-desc').textContent()) ?? '';
+    expect(text.trim().length).toBeGreaterThan(200);
+    expect(text.trim().length).toBeLessThanOrEqual(800);
+  });
+
+  test('should render header, nav, banner, title, copyright', async ({ page }) => {
+    await expect(page.locator('.ttj-header')).toBeVisible();
+    await expect(page.locator('.ttj-nav')).toBeVisible();
+    await expect(page.locator('.ttj-banner')).toBeVisible();
+    await expect(page.locator('.ttj-title')).toBeVisible();
+    await expect(page.locator('.ttj-copyright')).toBeVisible();
+  });
+
+  test('should contain all static policy sections', async ({ page }) => {
+    for (const id of ['productinfo', 'shippinginfo', 'warranty', 'maintenance', 'receiving', 'sales', 'payment', 'returns', 'aboutus', 'contact']) {
+      await expect(page.locator(`#${id}`)).toBeVisible();
+    }
+  });
+
+  test('should not contain any eBay-banned active-content tokens', async ({ page }) => {
+    const html = await page.content();
+    const forbidden = [
+      /<script\b/i,
+      /<form\b/i,
+      /<iframe\b/i,
+      /<embed\b/i,
+      /<object\b/i,
+      /<applet\b/i,
+      /<input\b/i,
+      /\bonclick\s*=/i,
+      /\bonmouseover\s*=/i,
+      /\bonload\s*=/i,
+      /\bonerror\s*=/i,
+    ];
+    for (const pattern of forbidden) {
+      expect(html, `Forbidden token ${pattern} found in eBay template`).not.toMatch(pattern);
+    }
+  });
+
+  test('should fit within eBay 500,000-char description budget', async ({ page }) => {
+    const html = await page.content();
+    expect(html.length).toBeLessThan(500_000);
+  });
+
+  test('should have no console errors', async ({ page }) => {
+    const errors: string[] = [];
+    page.on('console', (msg) => { if (msg.type() === 'error') errors.push(msg.text()); });
+    await page.goto(URL);
+    await page.waitForLoadState('networkidle');
+    expect(errors).toHaveLength(0);
+  });
+});
+
+test.describe('Landing & Cross-page Navigation', () => {
+  test('root index serves a landing page linking to all three mockups', async ({ page }) => {
+    await page.goto('/');
+    await expect(page).toHaveTitle(/JMI Design System/);
+    await expect(page.locator('a[href="mockups/home.html"]')).toBeVisible();
+    await expect(page.locator('a[href="mockups/product-detail.html"]')).toBeVisible();
+    await expect(page.locator('a[href="mockups/ebay-product.html"]')).toBeVisible();
   });
 });

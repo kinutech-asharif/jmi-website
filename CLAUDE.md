@@ -2,30 +2,56 @@
 
 ## Project Overview
 
-This project contains a complete UI/UX design system and page templates for **JapanMotorImport.ca** - a WooCommerce-based eCommerce site specializing in authentic JDM engines, transmissions, and performance parts.
+JMI's design-system and template repository. Two delivery tracks live side-by-side:
 
-**Design Philosophy:** Modern JDM performance aesthetic with clean, trustworthy, conversion-focused design.
+1. **WooCommerce Storefront mockups** — homepage + product detail for **JapanMotorImport.ca**, the parent brand's storefront.
+2. **eBay listing description template** — a seller-branded HTML template for JMI's **Top Tier Japan (TTJ)** brand, modelled after the `templates/jdm-nagano-ebay-template.zip` reference. The eBay track is the current active deliverable.
 
-**Tech Stack:** HTML/CSS (WooCommerce/Storefront child theme compatible)
+**Design Philosophy:** Modern JDM performance aesthetic — clean, trustworthy, conversion-focused.
+
+**Tech Stack:** HTML/CSS (WooCommerce/Storefront child-theme-compatible for the storefront track; single self-contained HTML for the eBay track).
+
+---
+
+## 🏢 Brand Portfolio
+
+JMI (Japan Motor Import) is the parent. Sub-brands / locations:
+
+| Brand | Location | Role |
+|---|---|---|
+| **Japan Motor Import** | Canada | Parent, B2C storefront (`JapanMotorImport.ca`) |
+| **Top Tier Japan LLC** | Phoenix, AZ 85035 | US location / eBay seller (`toptierjapanllc`) |
+
+The eBay template in `mockups/ebay-product.html` carries the **Top Tier Japan** identity — TTJ-specific address, policies, and "LIMITED WARRANTY OFFERED BY TOP TIER JAPAN" section naming. The storefront mockups use the JMI parent identity.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-jmi-website/
-├── CLAUDE.md                     # This file - design system documentation
-├── index.html                    # Root redirect to mockups/home.html
-├── package.json                  # NPM scripts and dependencies
+jmi-ebay/
+├── CLAUDE.md                     # This file — design system & template spec
+├── README.md                     # Human-facing project entry point
+├── index.html                    # 3-link landing page
+├── package.json                  # NPM scripts (serve, test, validate:ebay)
 ├── playwright.config.ts          # Playwright test configuration
 ├── mockups/
-│   ├── home.html                 # Homepage mockup
-│   ├── product-detail.html       # Product detail page mockup
+│   ├── home.html                 # WooCommerce — homepage mockup
+│   ├── product-detail.html       # WooCommerce — product detail mockup
+│   ├── ebay-product.html         # eBay — TTJ-branded listing description template
 │   ├── css/                      # (reserved for extracted styles)
 │   └── images/
-│       └── JMI logo 2026.png
+│       ├── JMI logo 2026.png     # Parent-brand logo
+│       ├── *.png                 # WooCommerce mockup imagery
+│       └── ttj/                  # Top Tier Japan product imagery (eBay template)
+│           ├── hero.jpg
+│           └── detail1..4.jpg
+├── templates/
+│   └── jdm-nagano-ebay-template.zip   # Reference template — do not modify
+├── scripts/
+│   └── validate-ebay.js          # Scans ebay-product.html for forbidden tokens + char budget
 └── tests/
-    ├── mockups.spec.ts           # Functional validation tests
+    ├── mockups.spec.ts           # Functional + eBay compliance tests
     ├── visual.spec.ts            # Visual regression tests
     └── accessibility.spec.ts     # Accessibility checks
 ```
@@ -38,8 +64,10 @@ jmi-website/
 
 | Page | URL |
 |------|-----|
-| Homepage | https://jmi.kinucloud.dev/mockups/home.html |
-| Product Detail | https://jmi.kinucloud.dev/mockups/product-detail.html |
+| Landing | https://jmi.kinucloud.dev/ |
+| Homepage (WooCommerce) | https://jmi.kinucloud.dev/mockups/home.html |
+| Product Detail (WooCommerce) | https://jmi.kinucloud.dev/mockups/product-detail.html |
+| eBay Listing (Top Tier Japan) | https://jmi.kinucloud.dev/mockups/ebay-product.html |
 
 **Repository:** https://github.com/kinutech-asharif/jmi-website
 
@@ -85,6 +113,7 @@ npm run serve:mockups
 | `npm run test:headed` | Run tests with visible browser |
 | `npm run test:ui` | Run tests in interactive UI mode |
 | `npm run test:report` | View HTML test report |
+| `npm run validate:ebay` | eBay-compliance scan on `mockups/ebay-product.html` (forbidden tokens + 500k-char budget) |
 
 ---
 
@@ -348,6 +377,59 @@ Trust badges, warranty badges, stock status - all use rounded rectangles with ic
 
 ---
 
+## 🏷️ eBay Listing Template (Top Tier Japan)
+
+### Reference
+
+- Source zip: `templates/jdm-nagano-ebay-template.zip` (JDM-Nagano 2019 template). Do not modify; extracted into `/tmp/` for inspection only.
+- Deliverable: `mockups/ebay-product.html` — a single self-contained HTML file that goes in the Description field of every TTJ eBay listing.
+
+### Philosophy
+
+A **generic brand wrapper**, not a product-specific page. Only a small number of slots change per listing; everything else (shipping, warranty, payment, returns, about us) is static across every listing.
+
+**Per-listing placeholder slots:** `{{TITLE}}`, `{{SKU}}`, `{{HERO_IMAGE}}`, `{{DETAIL_IMG_1..4}}`, `{{SHORT_DESCRIPTION}}`, `{{PHONE}}`, `{{LOGO_SRC}}`.
+
+**Static sections (never change per listing):** Delivery Information · Limited Warranty (A–H) · Maintenance Requirements · Receiving & Inspection · Sales & Deposit Policy · Payment Methods Accepted · Returns Policy · About Us · Contact Us · Copyright.
+
+### eBay Active-Content Policy — Hard Rules
+
+**Blocklist (eBay strips or rejects):**
+- `<script>` and all event handlers (`onclick`, `onmouseover`, `onload`, etc.)
+- `<form>` with any action
+- `<iframe>`, `<object>`, `<embed>`, `<applet>`
+- Flash, plugins, cookies
+- External `<link rel="stylesheet">` (Google Fonts link included — eBay silently drops it, so font stacks must degrade gracefully)
+- `<input>` of any type (stricter than eBay requires, but removes a whole class of sanitizer risk)
+
+**Allowlist (safe to use):**
+- HTML5 structural tags
+- Single inline `<style>` block in `<head>` + inline `style=""` attributes
+- Modern CSS: grid, flexbox, `clip-path`, custom properties (`var(--x)`), keyframes, pseudo-elements
+- `<a target="_blank">` (required for external links; `tel:` / `mailto:` OK)
+- Images ≤ 700px wide over HTTPS
+
+### Budgets
+
+- **Full description:** 500,000 characters max (HTML counts). Current mockup ~30 KB, leaves huge headroom.
+- **Mobile summary:** ≤ 800 plain-text characters extracted from the first-in-body `<span class="ttj-mobile-desc">`.
+
+### Scraping Rule
+
+**Never use WebFetch / browser automation against `ebay.com` or `*.ebaydesc.com`.** eBay instantly bans AI-agent traffic. All policy text in `ebay-product.html` was pulled with `curl -A '<real UA>'` from the reference listing (`ebay.com/itm/287261060538`) and its description iframe; do the same for any future sourcing.
+
+### Pre-upload Checklist
+
+Before pasting `mockups/ebay-product.html` into an eBay listing description field:
+
+1. Swap the 5 `images/ttj/*.jpg` references to public HTTPS URLs (e.g., `https://jmi.kinucloud.dev/mockups/images/ttj/...` or a hardened CDN).
+2. Replace every `{{...}}` placeholder with the real value for this listing.
+3. Run `npm run validate:ebay` — must exit 0.
+4. In DevTools, disable the Google Fonts `<link>` and confirm the fallback (Impact / Segoe UI) still looks acceptable.
+5. Paste the HTML into the eBay listing's Description editor (HTML view), preview on desktop and mobile. Verify no "active content removed" banner, and the 500–750-char mobile summary is rendered correctly.
+
+---
+
 ## 🛠️ Technical Implementation Notes
 
 ### WooCommerce Compatibility
@@ -429,27 +511,34 @@ Products should support these fields:
 
 ## 🚀 Next Steps
 
-### Phase 1: WooCommerce Setup
+### Phase 1: eBay Listing Template (active)
+1. Client review of `mockups/ebay-product.html` (TTJ-branded)
+2. Supply real TTJ logo (`{{LOGO_SRC}}`) and phone number (`{{PHONE}}`)
+3. Publish product images on HTTPS CDN; swap local `images/ttj/` paths
+4. Paste into TTJ eBay Sandbox listing and verify no active-content warnings
+5. Roll out to TTJ's production listings
+
+### Phase 2: WooCommerce Setup
 1. Install Storefront theme
 2. Create child theme with JMI branding
 3. Configure product categories
 4. Set up shipping zones/classes
 
-### Phase 2: Custom Development
+### Phase 3: WooCommerce Custom Development
 1. Build header with dropdown menus
 2. Implement shipping calculator
 3. Create custom product page template
 4. Add badge/stock status system
 5. Build homepage sections
 
-### Phase 3: Content & Products
+### Phase 4: WooCommerce Content & Products
 1. Upload product catalog
 2. Write policy pages
 3. Create category descriptions
 4. Add product images
 5. Configure shipping rates
 
-### Phase 4: Testing & Launch
+### Phase 5: Storefront Testing & Launch
 1. Mobile responsiveness testing
 2. Cross-browser testing
 3. Shipping calculator validation
