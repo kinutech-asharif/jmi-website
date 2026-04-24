@@ -651,6 +651,13 @@ For questions about this design system or implementation:
 
 ## 🔄 Version History
 
+**v1.2** - April 2026
+- eBay template split into v1 (original, kept for client comparison) and v2 (designer-critiqued rebuild)
+- v2 refinements: hero lock-up, custom SVG trust icons, curated JDM stock photography, 3×2 navigation grid on narrow phones
+- v1 refinements: red katakana accent under the wordmark, inline Hinomaru-flag SVG replacing the 🇯🇵 emoji (Windows was rendering it as literal "JP")
+- Both versions: text payment chips replaced with inline Visa / Mastercard / PayPal brand-card SVGs (Apache-2.0, `aaronfagan/svg-credit-card-payment-icons`)
+- Phone numbers and emails removed from the eBay description HTML per eBay's off-platform-contact policy; buyers directed to "Contact seller"
+
 **v1.1** - January 2026
 - GitHub Pages deployment
 - Playwright test suite (functional, visual, accessibility)

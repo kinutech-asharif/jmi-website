@@ -35,9 +35,11 @@ npm run serve               # http://localhost:3000
 
 - **`mockups/product-detail.html`** — Full WooCommerce PDP with gallery, specs, tabs (description/fitment/warranty/shipping/returns), shipping calculator, related products. Interactive JS for tabs and quantity.
 
-- **`mockups/ebay-product-v1.html`** — **v1.** Original JDM-Nagano-style single-file TTJ listing template. Stacked sections with repeating clip-path, emoji trust icons, full red treatment. eBay-sandbox-clean. Kept for client comparison.
+- **`mockups/ebay-product-v1.html`** — **v1.** Original JDM-Nagano-style single-file TTJ listing template. Stacked sections with repeating clip-path, full red treatment, red katakana accent under the wordmark, mostly-emoji trust icons plus an inline Hinomaru-flag SVG for the Japan badge (platform-independent rendering). eBay-sandbox-clean. Kept for client comparison.
 
-- **`mockups/ebay-product.html`** — **v2 (current).** Designer-critiqued rebuild. Merged hero image + title lock-up with gradient scrim overlay, three section variants (default / muted / dark-inverted "About"), custom inline SVG trust icons (no emoji), katakana wordmark, restrained clip-path (3 surfaces only), typographic hierarchy with lead paragraphs and demoted warranty H3s. Same compliance guarantees. Drop into the Description field of any TTJ listing — see the **Pre-upload checklist** in `CLAUDE.md`.
+- **`mockups/ebay-product.html`** — **v2 (current).** Designer-critiqued rebuild. Merged hero image + title lock-up with gradient scrim overlay, three section variants (default / muted / dark-inverted "About"), custom inline SVG trust icons (no emoji), katakana wordmark, restrained clip-path (3 surfaces only), typographic hierarchy with lead paragraphs and demoted warranty H3s, 3×2 navigation grid that holds on narrow phones. Same compliance guarantees. Drop into the Description field of any TTJ listing — see the **Pre-upload checklist** in `CLAUDE.md`.
+
+Both eBay versions share an inline SVG payment-method strip (Visa · Mastercard · PayPal brand cards) in place of the original text chips.
 
 ## Reference assets
 
